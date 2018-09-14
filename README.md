@@ -12,6 +12,6 @@ Step-by-step Instructions:
     nodemon server.js
     
 ### 3. Visit website
-    Go to http://localhost:8000/
+    Go to http://localhost:8000/ in any Web Browser
 
 
