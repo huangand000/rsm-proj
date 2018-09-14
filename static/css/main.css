@@ -1,0 +1,38 @@
+body {
+    font-family: "Lucida Console", Monaco, monospace;
+    text-align: center;
+    background-image: url(https://starkaerospace.com/wp-content/uploads/2014/06/background-world-map-1.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    margin: auto;
+    height: 300px;
+    width: 400px;
+}
+
+.submit, .coordinates, .relocate {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.coordinates {
+    text-align: center;
+}
+
+.relocate {
+    display: none;
+    width: 25%;
+}
+
+h1 {
+    margin-top: 10%;
+    font-size: 120px;
+    color: #666666;
+}

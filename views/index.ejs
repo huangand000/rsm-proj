@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RSM Web Developer Assignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+    <h1>RSM</h1>
+    <div class='container'>
+        <div class='labels'>
+            <input class='coordinates' type='text' placeholder="Longitude,Latitude">
+            <input class='submit' type='submit' value='Search'>
+        </div>
+    </div>
+    <button class='relocate'>Relocate</button>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(".submit").click(function() {
+                $.ajax({
+                    url: "/process",
+                    type: "POST",
+                    data: {"coordinates": $(".coordinates").val()},
+                    success: function(result) {
+                        $(".container").css("background-image", "url(" + result.info.url + ")");
+                        $(".labels").hide();
+                        $(".relocate").show();
+                    },
+                    error: function(error) {
+                        console.log("Error" + error);
+                    }
+                });
+            });
+
+            $(".relocate").click(function() {
+                $(".container").css("background-image", "none");
+                $(".labels").show();
+                $(".relocate").hide();
+            });
+        });
+    
+    </script>
+</body>
+</html>
